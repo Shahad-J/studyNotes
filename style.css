@@ -193,7 +193,7 @@ button:active {
     .window {
         font-size: 0.5rem;
         width: 50vw;
-        height: 40vh;
+        height: 30vh;
     }
     .window__header{
         font-size: 1.3rem;
