@@ -132,17 +132,6 @@ function toggleFullScreen(elementId) {
     }
 }
 
-// Open PDF
-function openPDF(pdfPath, pdfTitle) {
-    const pdfViewer = document.getElementById('pdf-viewer');
-    const pdfFrame = document.getElementById('pdf-frame');
-    const pdfTitleElement = document.getElementById('pdf-title');
-
-    pdfFrame.src = pdfPath;
-    pdfTitleElement.innerText = pdfTitle;
-    pdfViewer.style.display = 'block';
-}
-
 //closing PDF and exiting fullscreen
 function closePDFAndFullscreen(button) {
     // Close the PDF window
@@ -168,6 +157,12 @@ function closePDFAndFullscreen(button) {
         }
     }
 }
+document.getElementById("fullscreen").addEventListener("touchstart", function () {
+    toggleFullScreen("pdf-frame");
+});
+document.getElementById("closePDF").addEventListener("touchstart", function () {
+    closePDFAndFullscreen("pdf-frame");
+});
 
 // Load YouTube API
 let tag = document.createElement('script');
