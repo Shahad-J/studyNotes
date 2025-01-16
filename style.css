@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #d3a7be;
+    overflow: auto;
+}
+/* Desktop */
+.desktop {
+    padding: 40px 0 30px 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Icons */
+.icon {
+    padding-top: 3px;
+    padding-left: 3px;
+    flex-direction: column;
+    cursor: pointer;
+    width: 5;
+    height: 5;
+    object-fit: cover;
+    cursor: pointer;
+}
+.icon p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2b2929;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+.icon--folder{ 
+    position: fixed;
+    padding-top: 80px; 
+    padding-right: 5px;
+    left: 10px; 
+}
+#my-notes-label{
+    font-size: 16px;
+    font-weight: bold;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+}
+.hidden {
+    display: none;
+}
+.window {
+    top: 20%;
+    left: 30%;
+    width: 30vw;
+    height: 45vh; 
+    z-index: 10;
+    overflow: auto;
+    background: #e7e2dc;
+    border: 3px solid;
+    border-top-color: #f0f0f0; 
+    border-left-color: #f0f0f0; 
+    border-bottom-color: #2b2929; 
+    border-right-color: #2b2929; 
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and borders in size calculations */
+}
+.window__header{
+    color: #e7e2dc;
+    /* -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black; */
+    margin: 0;
+    z-index: 11;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: #2b2929;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    cursor: grab; /* Show grabbing cursor */
+    user-select: none; /* Prevent text selection while dragging */
+    }
+
+#main-content {
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #2b2929;
+    padding: 15px;
+}
+
+.window__content > #pdf-frame  {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden; 
+}
+
+#my-notes-folder, #network-folder, #pdf-viewer{
+    z-index: 11;
+}
+.window__footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-top: 2px solid #000;
+}
+
+.button {
+    background-color: #e7e2dc;
+    border: 3px solid;
+    border-top-color: #f0f0f0; 
+    border-left-color: #f0f0f0; 
+    border-bottom-color: #999999; 
+    border-right-color: #999999; 
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button img{
+    width: 10px;
+    height: 10px;
+}
+button:hover {
+    background-color: #cbc4c4;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+button:active {
+    transform: translateY(2px); /* إعادة الزر قليلاً للأسفل */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* تقليل الظل */
+}
+.window__footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: calc(100% - 20px);
+    background: #2b2929;
+    border: 3px solid #000;
+    border-top: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 7px;
+}
+
+.taskbar__musicPlayer--controls {
+    border-radius: 5px;
+    display: flex;
+}
+
+.taskbar__musicPlayer--controls button{
+    object-fit: contain;
+    background: none;
+    border-radius: 8px 8px 4px 4px;
+    border: transparent
+}
+.taskbar__musicPlayer--controls img {
+    width: 30px;
+    height: 30px;
+}
+.taskbar__musicPlayer, #datetime, #current-time, #duration {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7e2dc;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    font-weight: bold;  
+    font-size: 2rem;
+}
+#song-title {
+    margin-left: auto;
+    font-weight: bold;  
+}
+
+#datetime {
+    position: relative;
+    right: 0;
+}
+
+/* for smaller devices */
+@media (max-width: 768px) {
+    .window {
+        font-size: 0.5rem;
+        width: 50vw;
+        height: 78vh;
+    }
+    .window__header{
+        font-size: 1.3rem;
+    }
+    .window__content{
+        font-size: 0.3rem;
+        padding: 0;
+    }
+    .taskbar{
+        height: 15vh;
+    }
+    .taskbar__musicPlayer, #datetime, #current-time, #duration {
+        font-size: 1rem;
+}
+}

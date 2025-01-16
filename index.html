@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> System online: Shahad's Notes </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Desktop Background -->
+  <div class="desktop">
+         <!-- My Notes Folder Icon -->
+         <div class="icon icon--folder" onclick="openFolder('my-notes-folder', event)">
+            <img src="icons/folder.png" alt="My Notes">
+            <p id="my-notes-label"> My Notes </p>
+        </div>
+
+    <!-- My Notes Folder Window -->
+    <div class="window hidden" id="my-notes-folder">
+            <div class="window__header">
+            <p>My Notes</p>
+            <button class= "button" onclick="closeFolder('my-notes-folder')">X</button>
+            </div>
+            <div class="window__content">
+            <div class="icon" onclick="openFolder('network-folder', event)">
+                <img src="icons/folder.png" alt="Networks Notes">
+                <p>Networks</p>
+            </div>
+        </div>
+      </div>
+    <!-- Network Notes Folder Window -->
+    <div class="window hidden" id="network-folder">
+        <div class="window__header">
+            <p>Networks Notes</p>
+            <button class="button" onclick="closeFolder('network-folder')">X</button>
+        </div>
+        <!-- Networks chapters window -->
+        <div class="window__content">
+            <div class="icon icon--pdf" onclick="openPDF('https://drive.google.com/file/d/1Cp3IchOH8Eb9rcvs93pIg1HnCOn0ROeN/preview', 'Networks: Chapter 2')">
+                <img src="icons/pdf-file.png" alt="Chapter2">
+                <p>Chapter2.pdf</p>
+            </div>
+        </div>
+      </div>
+    <!-- PDF Viewer -->
+     <div class="window hidden" id="pdf-viewer">
+        <div class="window__header">
+            <p id="pdf-title"></p>
+            <div class="window__header--buttons">
+             <button class= "button" id="fullscreen" onclick="toggleFullScreen('pdf-viewer')"><img src="icons/fullscreen.png"></button>
+             <button class= "button" onclick="closePDFAndFullscreen(this)">X</button>
+            </div>
+        </div>
+         <div class="window__content">
+             <iframe id="pdf-frame"></iframe>
+        </div>
+      </div>
+    <!-- Main Window -->
+    <div class="window" id="main-window">
+        <div class="window__header">
+            <p>Welcome</p>
+        </div>
+        <div class="window__content" id="main-content">
+            <h2>Welcome, user!</h2>
+            <p>This is where I upload my CS study note <3 </p>
+            <ul>
+                <li>you can reach me on <a href="https://www.linkedin.com/in/shahad-al-johani">linkedin</a></li>
+            </ul>
+        </div>
+        <div class="window__footer">
+            <button class="button" onclick="closeFolder('main-window')">OK!</button>
+        </div>
+    </div>
+ <!-- Taskbar -->
+ <div class="taskbar">
+    <div id="player" style="display: none;"></div>
+    <div class="taskbar__musicPlayer">
+            <span id="song-title">No song playing</span>
+        <div class=" taskbar__musicPlayer--controls">
+            <button class="button" id="play-btn"><img src="icons/play.png" alt="Play"></button>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="current-time">0:00</span> <p id="slash">/</p><span id="duration">0:00</span>
+        </div>
+    </div>
+    <p id="datetime"></p>
+ </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
