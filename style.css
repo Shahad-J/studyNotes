@@ -31,7 +31,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.icon--folder{ 
+#icon--folder{ 
     position: fixed;
     padding-top: 80px; 
     padding-right: 5px;
@@ -190,10 +190,12 @@ button:active {
 
 /* for smaller devices */
 @media (max-width: 768px){
+    #icon--folder{
+        padding-top: 17vh;
+    }
     .window {
         font-size: 0.5rem;
         width: 30vh;
-        height: 60vh;
     }
     .window__header{
         font-size: 1.3rem;
@@ -208,9 +210,10 @@ button:active {
         gap: 5%;
     }
     .taskbar__musicPlayer, #datetime, #current-time, #duration {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
+        word-wrap: wrap;
 }
 #progress-bar{
-    width: 60%;
+    width: 15vw;
 }
 }
